@@ -2,6 +2,7 @@ package com.example.practice_login_form;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -39,6 +40,12 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else{
                     Toast.makeText(getApplicationContext(),"Bahut Shukriya",Toast.LENGTH_SHORT).show();
+                    String names=name.getText().toString();
+                    String regNo=registrationNumber.getText().toString();
+                    Intent i=new Intent(MainActivity.this,Main2Activity.class);
+                    i.putExtra("Name",names);
+                    i.putExtra("RegNo",regNo);
+                    startActivity(i);
 
                 }
             }
